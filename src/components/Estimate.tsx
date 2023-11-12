@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const EstimatePage = () => {
+  interface InfoCardProps {
+    title: string;
+    value: string;
+  }
+
   useEffect(() => {
     document.title = "SunScope | Estimate";
 
@@ -44,7 +49,7 @@ const EstimatePage = () => {
     setIsAnalyzing(false);
   };
 
-  const InfoCard = ({ title, value }) => (
+  const InfoCard: React.FC<InfoCardProps> = ({ title, value }) => (
     <div className="bg-gray-50 p-4 rounded-xl shadow-sm">
       <h3 className="text-lg font-medium text-gray-800">{title}</h3>
       <p className="text-md mt-1 text-gray-700">{value}</p>
