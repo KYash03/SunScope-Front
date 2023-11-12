@@ -53,7 +53,7 @@ const EstimatePage = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
-              <img src="./src/assets/roof.png" alt="" className='rotate-90 text-center -my-20'/>
+              <img src="../../roof.png" alt="" className='rotate-90 text-center -my-20'/>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ const EstimatePage = () => {
             <p className="text-xl">Estimated Revenue: <b>${results.revenue}</b></p>
             <p className="text-xl">Payback Period: <b>{results.paybackPeriod} Years</b></p>
           </div>
-          <img src="./src/assets/graph.png" alt="" className='w-1/2 mt-10' />
+          <img src="../../graph.png" alt="" className='w-1/2 mt-10' />
         </div>
         </div>
       </div>
