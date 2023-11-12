@@ -27,7 +27,6 @@ const EstimatePage = () => {
   const handleAnalysis = async () => {
     setIsAnalyzing(true);
     try {
-      // NEED TO CHANGE THE URL
       const response = await axios.get(
         "https://sunscope-latest-gtpsnz34ja-uc.a.run.app/get_solar_financial_data",
         { params: { address } }
@@ -87,11 +86,13 @@ const EstimatePage = () => {
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
-              <img
-                src="../../roof.png"
-                alt=""
-                className="rotate-90 text-center -my-20 py-2"
-              />
+              {!isAnalyzing && results.sunlightHours !== "___" && (
+                <img
+                  src="../../roof.png"
+                  alt=""
+                  className="rotate-90 text-center -my-20 py-2"
+                />
+              )}
             </div>
           </div>
 
@@ -125,7 +126,9 @@ const EstimatePage = () => {
                 Payback Period: <b>{results.paybackPeriod} Years</b>
               </p>
             </div>
-            <img src="../../graph.png" alt="" className="w-1/2 mt-10" />
+            {!isAnalyzing && results.sunlightHours !== "___" && (
+              <img src="../../graph.png" alt="" className="w-1/2 mt-10" />
+            )}
           </div>
 
           <div className="text-center mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
