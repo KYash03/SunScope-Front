@@ -1,7 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 
 const EstimatePage = () => {
+  useEffect(() => {
+    document.title = 'SunScope | Estimate';
+    
+    return () => {
+      document.title = 'SunScope';
+    };
+  }, []);
+
   const [address, setAddress] = useState('');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [results, setResults] = useState({

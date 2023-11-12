@@ -1,4 +1,14 @@
+import { useEffect } from 'react';
+
 const Home = () => {
+  useEffect(() => {
+    document.title = 'SunScope | Home';
+    
+    return () => {
+      document.title = 'SunScope';
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500 font-modern-sans">
       <div

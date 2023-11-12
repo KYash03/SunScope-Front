@@ -4,12 +4,9 @@ function NavBar() {
   return (
     <div className="h-20 flex items-center px-10 py-6 shadow-lg rounded-b-lg">
       <div className="flex justify-center content-center h-1/1">
-        <a
-          href="/home"
-          className="title pt-6 text-4xl font-bold text-orange-500 cursor-pointer"
-        >
+        <Link to="/home" className="title pt-6 text-4xl font-bold text-orange-500 cursor-pointer">
           SunScope
-        </a>
+        </Link>
         <img
               src={"../../logo.png"}
               alt="logo"

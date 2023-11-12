@@ -6,7 +6,17 @@ import {
   Typography,
 } from "@material-tailwind/react";
 
+import { useEffect } from "react";
+
 export function Contact() {
+  useEffect(() => {
+    document.title = 'SunScope | Contact';
+    
+    return () => {
+      document.title = 'SunScope';
+    };
+  }, []);
+
   return (
     <div className="flex bg-gradient-to-r from-cyan-500 to-blue-500 min-h-screen justify-center py-10">
       <Card color="white" shadow={false} className="items-center p-10 h-1/2">
